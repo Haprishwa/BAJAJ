@@ -3,6 +3,11 @@ const app = express();
 
 app.use(express.json());
 
+// Root endpoint
+app.get("/", (req, res) => {
+  res.send("Welcome to BFHL API");
+});
+
 app
   .route("/bfhl")
   .get((req, res) => {
@@ -30,15 +35,15 @@ app
 
     res.json({
       is_success: true,
-      user_id: "Haripriya",
-      email: "haripriya.21bce9268@vitapstudent.ac.in",
-      roll_number: "21BCE9304",
+      user_id: "Haprishwa",
+      email: "haprishwa.21bce7206@vitapstudent.ac.in",
+      roll_number: "21BCE7206",
       numbers: numbers,
       alphabets: alphabets,
       highest_alphabet: highest_alphabet ? [highest_alphabet] : [],
     });
   });
-  
-  app.listen(3000, () => {
-    console.log('Server listening on port 3000');
-  });
+
+app.listen(3000, () => {
+  console.log("Server listening on port 3000");
+});
